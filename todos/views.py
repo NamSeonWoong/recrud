@@ -26,3 +26,10 @@ def create(request):
     todo.save()
 
     return redirect('/todos/')
+
+
+def delete(request, id):
+    todo = Todo.objects.get(id=id)
+    todo.delete()
+
+    return redirect('/todos/')
